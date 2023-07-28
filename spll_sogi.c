@@ -13,7 +13,7 @@
 
 
 #define AC_FREQ  (50)//(50/4)
-#define ISR_FREQ (25000)
+#define ISR_FREQ (50000)
 #define B0_LPF (10)//(222.2862)
 #define B1_LPF (-10)//(-222.034)
 

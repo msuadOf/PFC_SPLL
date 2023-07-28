@@ -61,7 +61,7 @@
 
 #include "bsp/bsp.h"
 #define _INT_ON
-
+#define ADC_Vref 2.5f
 int a=1250-500;
 int b=1250+500;
 int c=2500;
@@ -84,14 +84,14 @@ __interrupt void INT_myADC0_1_ISR(void)
     // Add the latest result to the buffer
     //
     //myADC_result=ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER0);
-    ADCA_Vol[0] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER12)*2.5f/4096.0f;
-    ADCA_Vol[1] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER13)*2.5f/4096.0f;
-    ADCA_Vol[2] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER14)*2.5f/4096.0f;
-    ADCA_Vol[3] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER15)*2.5f/4096.0f;
-    ADCA_Vol[4] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER8)*2.5f/4096.0f;
-    ADCA_Vol[5] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER9)*2.5f/4096.0f;
-    ADCA_Vol[6] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER10)*2.5f/4096.0f;
-    ADCA_Vol[7] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER11)*2.5f/4096.0f;
+    ADCA_Vol[0] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER12)*ADC_Vref/4096.0f;
+    ADCA_Vol[1] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER13)*ADC_Vref/4096.0f;
+    ADCA_Vol[2] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER14)*ADC_Vref/4096.0f;
+    ADCA_Vol[3] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER15)*ADC_Vref/4096.0f;
+    ADCA_Vol[4] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER8)*ADC_Vref/4096.0f;
+    ADCA_Vol[5] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER9)*ADC_Vref/4096.0f;
+    ADCA_Vol[6] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER10)*ADC_Vref/4096.0f;
+    ADCA_Vol[7] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER11)*ADC_Vref/4096.0f;
 
     int i=0;
     for(i=0;i<4;i++){
@@ -103,9 +103,9 @@ __interrupt void INT_myADC0_1_ISR(void)
 //    myADC0Results[3][index] = ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER3);
 
 
-    acValue=ADCA_Vol[0];
+    acValue=ADCA_Vol[0]-1.25f;
     float32_t duty;
-    PFC_Controller(i_Vol, i_Cur, o_Vol,&duty);
+    PFC_Controller(acValue, i_Cur, o_Vol,&duty);
     duty=(0.5f*(out+100))/100;
     duty=0.4;
     PFC_hal_epwm_set_duty(duty);
@@ -224,7 +224,7 @@ void main(void)
     while(1)
     {
 #ifdef _INT_ON
-        printf("sin:%d,%d,%d\n",(int)(out*1000),(int)(acValue*1000),(int)(spll1.theta*1000));
+        printf("sin:%d,%d,%d\n",(int)(spll1.sine*1000),(int)(acValue*1000),(int)(spll1.theta*1000));
         //SCI_write(tx_buff,50);
         //UART_printf("45\n");
         //DEVICE_DELAY_US(1000000/2);
