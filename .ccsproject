@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="12.3.0"/>
+	<deviceVariant value="TMS320C28XX.TMS320F280039C"/>
+	<deviceFamily value="C2000"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="22.6.0.LTS"/>
+	<isElfFormat value="true"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=empty_driverlib_project.projectspec.empty_driverlib_project"/>
+	<origin value="D:/Program/QQdocs/my_driverlib_SPLL_PFC_2023_7_27_0"/>
+	<filesToOpen value=""/>
+	<isTargetManual value="true"/>
+</projectOptions>

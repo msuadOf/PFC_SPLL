@@ -1,0 +1,53 @@
+digraph {
+    graph [fontname = "helvetica"];
+    node  [fontname = "helvetica"];
+    edge  [fontname = "helvetica"];
+    graph [mclimit=50 nodesep=0.5 rankdir=LR ranksep=1.25]
+
+    node [shape = circle style=filled];
+
+        adca_SOC8 [label="ADCA SOC8" fillcolor="#FFA0A0" pos="0.000,3.920!"]
+        adca_SOC9 [label="ADCA SOC9" fillcolor="#FFA0A0" pos="2.772,2.772!"]
+        adca_SOC10 [label="ADCA SOC10" fillcolor="#FFA0A0" pos="3.920,0.000!"]
+        adca_SOC11 [label="ADCA SOC11" fillcolor="#FFA0A0" pos="2.772,-2.772!"]
+        adca_SOC12 [label="ADCA SOC12" fillcolor="#FFA0A0" pos="0.000,-3.920!"]
+        adca_SOC13 [label="ADCA SOC13" fillcolor="#FFA0A0" pos="-2.772,-2.772!"]
+        adca_SOC14 [label="ADCA SOC14" fillcolor="#FFA0A0" pos="-3.920,-0.000!"]
+        adca_SOC15 [label="ADCA SOC15" fillcolor="#FFA0A0" pos="-2.772,2.772!"]
+        adca_SOC0 [fillcolor="#FFA0A0" pos="18.000, 3.920!"]
+        adca_SOC1 [fillcolor="#FFA0A0" pos="18.000, 0.920!"]
+        adca_SOC2 [fillcolor="#FFA0A0" pos="18.000, -2.080!"]
+        adca_SOC3 [fillcolor="#FFA0A0" pos="18.000, -5.080!"]
+        adca_SOC4 [fillcolor="#FFA0A0" pos="18.000, -8.080!"]
+        adca_SOC5 [fillcolor="#FFA0A0" pos="18.000, -11.080!"]
+        adca_SOC6 [fillcolor="#FFA0A0" pos="18.000, -14.080!"]
+        adca_SOC7 [fillcolor="#FFA0A0" pos="18.000, -17.080!"]
+        adca_SOC8 -> adca_SOC9
+        adca_SOC9 -> adca_SOC10
+        adca_SOC10 -> adca_SOC11
+        adca_SOC11 -> adca_SOC12
+        adca_SOC12 -> adca_SOC13
+        adca_SOC13 -> adca_SOC14
+        adca_SOC14 -> adca_SOC15
+        adca_SOC15 -> adca_SOC8
+    node [shape=rect style=filled];
+        ADC_TRIGGER_EPWM4_SOCA[label="ePWM4, ADCSOCA" fillcolor="yellow"  fontsize="40" color="white" pos="24.000,-3.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA[label="ADCA"  fontsize="40" fillcolor="white" color="white" pos="24.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc8[label="soc8 (S+H[SYSCLK]: 1, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="6.000" pos="30.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc9[label="soc9 (S+H[SYSCLK]: 1, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="6.000" pos="36.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc10[label="soc10 (S+H[SYSCLK]: 9, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="10.000" pos="44.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc11[label="soc11 (S+H[SYSCLK]: 1, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="6.000" pos="52.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc12[label="soc12 (S+H[SYSCLK]: 9, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="10.000" pos="60.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc13[label="soc13 (S+H[SYSCLK]: 9, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="10.000" pos="70.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc14[label="soc14 (S+H[SYSCLK]: 9, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="10.000" pos="80.000,-9.000!"]
+          
+        adca_ADC_TRIGGER_EPWM4_SOCA_soc15[label="soc15 (S+H[SYSCLK]: 9, Conv[SYSCLK]: 11)" fillcolor="#FFA0A0" width="10.000" pos="90.000,-9.000!"]
+}

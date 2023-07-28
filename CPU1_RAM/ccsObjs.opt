@@ -1,0 +1,17 @@
+"./syscfg/board.obj"
+"./syscfg/c2000ware_libraries.obj"
+"./pfc_hal.obj"
+"./spll_pfc_main.obj"
+"./spll_sogi.obj"
+"./bsp/bsp_debugSCI.obj"
+"./bsp/launchxl_sci_io_driverlib.obj"
+"./device/device.obj"
+"./device/f28003x_codestartbranch.obj"
+"../28003x_generic_ram_lnk.cmd"
+"D:/Program/ti/ccs1220/C2000Ware_4_03_00_00/driverlib/f28003x/driverlib/ccs/Debug/driverlib.lib"
+"../rts2800_fpu32_eabi.lib"
+"../rts2800_fpu32_fast_supplement_eabi.lib"
+"../rts2800_fpu64_eabi.lib"
+"../rts2800_ml_eabi.lib"
+-lc2000ware_libraries.cmd.genlibs
+-llibc.a
